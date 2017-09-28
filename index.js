@@ -1,15 +1,17 @@
 function isPNG(binStr) {
   var PNG_MARKER = [137, 80, 78, 71, 13, 10, 26, 10]
-    .map(code => String.fromCharCode(code)).join('');
+    .map(function(code){
+      return String.fromCharCode(code);
+    }).join('');
   return binStr.indexOf(PNG_MARKER) === 0;
 }
 
 function isJPEG(binStr) {
   var length = binStr.length;
-  var SOI = `${String.fromCharCode(0xff)}${String.fromCharCode(0xd8)}`;
-  var DQT = `${String.fromCharCode(0xff)}${String.fromCharCode(0xdb)}`;
-  var DHT = `${String.fromCharCode(0xff)}${String.fromCharCode(0xc4)}`;
-  var EOI = `${String.fromCharCode(0xff)}${String.fromCharCode(0xd9)}`;
+  var SOI = String.fromCharCode(0xff) + String.fromCharCode(0xd8);
+  var DQT = String.fromCharCode(0xff) + String.fromCharCode(0xdb);
+  var DHT = String.fromCharCode(0xff) + String.fromCharCode(0xc4);
+  var EOI = String.fromCharCode(0xff) + String.fromCharCode(0xd9);
   var EOIIndex = binStr.indexOf(EOI);
   return ((binStr.indexOf(SOI) !== -1) 
     && (binStr.indexOf(DQT) !== -1) 
