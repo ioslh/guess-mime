@@ -1,0 +1,11 @@
+{
+  "name": "guess-mime",
+  "version": "0.0.1",
+  "description": "Guess image file mime form binary string",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ohislh@gmail.com",
+  "license": "ISC"
+}
