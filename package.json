@@ -1,6 +1,6 @@
 {
   "name": "guess-mime",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Guess image file mime form binary string",
   "main": "index.js",
   "scripts": {
